@@ -1,0 +1,10 @@
+# Redrob ranker - ranking step dependencies
+#
+# The ranking step (rank.py) uses the Python standard library ONLY.
+# There are no third-party imports in the ranking path, which is what makes the
+# Stage-3 compute reproduction trivial: CPU-only, no network, no model downloads.
+#
+# Tested on Python 3.8 - 3.12.
+#
+# (numpy is listed only for the optional analysis notebooks; rank.py does not import it.)
+numpy>=1.21

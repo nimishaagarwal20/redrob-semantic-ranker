@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pkl
+/tmp/
+submission.csv
+.idf_cache.json

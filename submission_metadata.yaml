@@ -1,0 +1,65 @@
+# Redrob Hackathon - Submission Metadata
+team_name: "redrob-semantic-ranker"
+
+primary_contact:
+  name: "Nimisha Agarwal"
+  email: "nagarwal858@gmail.com"
+  phone: "+91-XXXXXXXXXX"          # TODO: fill before submitting
+
+team_members:
+  - name: "Nimisha Agarwal"
+    email: "nagarwal858@gmail.com"
+    role: "Team Lead / ML Engineer"
+
+# ---------------------------------------------------------------------------
+# Code and reproducibility
+# ---------------------------------------------------------------------------
+github_repo: "https://github.com/USERNAME/redrob-semantic-ranker"   # TODO: set to your repo URL
+sandbox_link: "https://colab.research.google.com/REPLACE_ME"        # TODO: see README 'Sandbox'
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+
+compute:
+  platform: "Local Linux box"
+  cpu_cores: 2
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Ubuntu 22.04 LTS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false        # rank.py computes IDF inline; no offline pre-compute
+  pre_computation_time_minutes: 0
+
+# ---------------------------------------------------------------------------
+# AI tools declaration (transparency only - not penalized)
+# ---------------------------------------------------------------------------
+ai_tools_used:
+  - "Claude"
+ai_usage_summary: |
+  Claude was used as a pair-programming assistant for code review, architectural
+  discussion, regex drafting, and writing documentation. All design decisions
+  (the rubric weights, disqualifier gates, behavioral multiplier, and honeypot
+  checks) were made and verified by the team against the JD and the data. No
+  candidate data was sent to any hosted LLM, and the ranking step itself makes
+  no LLM/API calls (CPU-only, no network).
+
+# ---------------------------------------------------------------------------
+methodology_summary: |
+  Hybrid ranker = semantic similarity over career *prose* (TF-IDF cosine to a
+  JD concept-query, deliberately not the skills tags) blended 45/55 with a
+  structured rubric (role-fit, domain evidence, production, evaluation literacy,
+  trust-weighted skills, experience). The blended base is then multiplied by:
+  (1) disqualifier gates encoding the JD's explicit "do NOT want" list
+  (pure-research/no-prod, consulting-only careers, CV/speech-only, LangChain-only,
+  lead-without-coding, title-chasers); (2) a behavioral availability multiplier
+  (activity recency, recruiter response rate, open-to-work, notice period) so
+  perfect-on-paper-but-unreachable candidates are down-weighted; (3) a location
+  factor (India Tier-1 / relocation); and (4) a honeypot sink that zeroes
+  internally-inconsistent profiles (impossible tenure, ghost "expert" skills).
+  Stdlib-only, ~2 min on CPU for 100K candidates.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
