@@ -14,7 +14,7 @@ team_members:
 # ---------------------------------------------------------------------------
 # Code and reproducibility
 # ---------------------------------------------------------------------------
-github_repo: "https://github.com/USERNAME/redrob-semantic-ranker"   # TODO: set to your repo URL
+github_repo: "https://github.com/nimishaagarwal20/redrob-semantic-ranker"
 sandbox_link: "https://colab.research.google.com/REPLACE_ME"        # TODO: see README 'Sandbox'
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
