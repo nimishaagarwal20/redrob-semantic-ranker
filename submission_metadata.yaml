@@ -4,7 +4,7 @@ team_name: "redrob-semantic-ranker"
 primary_contact:
   name: "Nimisha Agarwal"
   email: "nagarwal858@gmail.com"
-  phone: "+91-XXXXXXXXXX"          # TODO: fill before submitting
+  phone: "+91-9582815488"
 
 team_members:
   - name: "Nimisha Agarwal"
@@ -15,7 +15,7 @@ team_members:
 # Code and reproducibility
 # ---------------------------------------------------------------------------
 github_repo: "https://github.com/nimishaagarwal20/redrob-semantic-ranker"
-sandbox_link: "https://colab.research.google.com/REPLACE_ME"        # TODO: see README 'Sandbox'
+sandbox_link: "https://colab.research.google.com/drive/17FTGBawAXB-gRE6__t6umHWi3yl4kJw_?usp=sharing"
 reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
 
 compute:
